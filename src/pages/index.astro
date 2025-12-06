@@ -1,0 +1,8 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MapComponent from '../components/MapComponent.jsx';
+---
+
+<Layout title="QHATU - Mapa de Mercados Informales">
+  <MapComponent client:only="react" />
+</Layout>

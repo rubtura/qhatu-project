@@ -1,0 +1,10 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PhotoUpload from '../components/PhotoUpload.jsx';
+---
+
+<Layout title="Subir Fotos - QHATU">
+  <div class="container mx-auto px-4 max-w-4xl">
+    <PhotoUpload client:only="react" />
+  </div>
+</Layout>

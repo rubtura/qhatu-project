@@ -1,0 +1,698 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.156944, -17.404722]
+      },
+      "properties": {
+        "name": "IMG_20250517_153623.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.156944, -17.404722]
+      },
+      "properties": {
+        "name": "IMG_20250517_153642.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.156956, -17.404797]
+      },
+      "properties": {
+        "name": "IMG_20250517_153747.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.156956, -17.404797]
+      },
+      "properties": {
+        "name": "IMG_20250517_153751.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.155739, -17.403636]
+      },
+      "properties": {
+        "name": "IMG_20250517_153843.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.159219, -17.396681]
+      },
+      "properties": {
+        "name": "IMG_20250517_154110.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.155469, -17.402536]
+      },
+      "properties": {
+        "name": "IMG_20250517_154251.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.159558, -17.401325]
+      },
+      "properties": {
+        "name": "IMG_20250517_154910.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.155097, -17.401800]
+      },
+      "properties": {
+        "name": "IMG_20250517_154919.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.155097, -17.401800]
+      },
+      "properties": {
+        "name": "IMG_20250517_155026.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.155097, -17.403181]
+      },
+      "properties": {
+        "name": "IMG_20250517_155401.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.153981, -17.402350]
+      },
+      "properties": {
+        "name": "IMG_20250517_155548.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.155911, -17.429122]
+      },
+      "properties": {
+        "name": "IMG_20250517_155838.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.153981, -17.402350]
+      },
+      "properties": {
+        "name": "IMG_20250517_160244.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.153342, -17.403322]
+      },
+      "properties": {
+        "name": "IMG_20250517_161019.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.153411, -17.402369]
+      },
+      "properties": {
+        "name": "IMG_20250517_161343.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.153522, -17.402294]
+      },
+      "properties": {
+        "name": "IMG_20250517_161440.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.153461, -17.402286]
+      },
+      "properties": {
+        "name": "IMG_20250517_161527.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.153464, -17.402311]
+      },
+      "properties": {
+        "name": "IMG_20250517_161553.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.153464, -17.402311]
+      },
+      "properties": {
+        "name": "IMG_20250517_161556.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.153464, -17.402311]
+      },
+      "properties": {
+        "name": "IMG_20250517_161619.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.153464, -17.402311]
+      },
+      "properties": {
+        "name": "IMG_20250517_161623.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.153572, -17.402317]
+      },
+      "properties": {
+        "name": "IMG_20250517_161700.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.153636, -17.402289]
+      },
+      "properties": {
+        "name": "IMG_20250517_161806.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.153636, -17.402289]
+      },
+      "properties": {
+        "name": "IMG_20250517_161812.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.153636, -17.402289]
+      },
+      "properties": {
+        "name": "IMG_20250517_161822.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.153733, -17.402250]
+      },
+      "properties": {
+        "name": "IMG_20250517_161930.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.153711, -17.402297]
+      },
+      "properties": {
+        "name": "IMG_20250517_162026.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.153711, -17.402297]
+      },
+      "properties": {
+        "name": "IMG_20250517_162039.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.153711, -17.402297]
+      },
+      "properties": {
+        "name": "IMG_20250517_162054.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.153711, -17.402297]
+      },
+      "properties": {
+        "name": "IMG_20250517_162101.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.153733, -17.402286]
+      },
+      "properties": {
+        "name": "IMG_20250517_162138.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.153733, -17.402286]
+      },
+      "properties": {
+        "name": "IMG_20250517_162153.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.153733, -17.402286]
+      },
+      "properties": {
+        "name": "IMG_20250517_162157.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.153764, -17.402292]
+      },
+      "properties": {
+        "name": "IMG_20250517_162346.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.153764, -17.402292]
+      },
+      "properties": {
+        "name": "IMG_20250517_162407.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.153764, -17.402292]
+      },
+      "properties": {
+        "name": "IMG_20250517_162410.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.153764, -17.402292]
+      },
+      "properties": {
+        "name": "IMG_20250517_162420.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.153764, -17.402292]
+      },
+      "properties": {
+        "name": "IMG_20250517_162423.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.153764, -17.402292]
+      },
+      "properties": {
+        "name": "IMG_20250517_162428.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.154125, -17.402292]
+      },
+      "properties": {
+        "name": "IMG_20250517_162833.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.154125, -17.402292]
+      },
+      "properties": {
+        "name": "IMG_20250517_162837.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.154147, -17.402272]
+      },
+      "properties": {
+        "name": "IMG_20250517_162940.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.154214, -17.402278]
+      },
+      "properties": {
+        "name": "IMG_20250517_163013.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.154214, -17.402278]
+      },
+      "properties": {
+        "name": "IMG_20250517_163045.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.154222, -17.402241]
+      },
+      "properties": {
+        "name": "IMG_20250517_163110.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.154447, -17.402247]
+      },
+      "properties": {
+        "name": "IMG_20250517_163211.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.154447, -17.402247]
+      },
+      "properties": {
+        "name": "IMG_20250517_163253.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.154669, -17.402297]
+      },
+      "properties": {
+        "name": "IMG_20250517_163314.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.154669, -17.402297]
+      },
+      "properties": {
+        "name": "IMG_20250517_163338.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.155097, -17.401800]
+      },
+      "properties": {
+        "name": "IMG_20250517_163410.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.155450, -17.402125]
+      },
+      "properties": {
+        "name": "IMG_20250517_163616.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.153611, -17.404031]
+      },
+      "properties": {
+        "name": "IMG_20250517_163710.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.154522, -17.402736]
+      },
+      "properties": {
+        "name": "IMG_20250517_170410.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.154519, -17.402353]
+      },
+      "properties": {
+        "name": "IMG_20250517_170535.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.153253, -17.401050]
+      },
+      "properties": {
+        "name": "IMG_20250517_171644.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.153253, -17.401050]
+      },
+      "properties": {
+        "name": "IMG_20250517_171708.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.153272, -17.400778]
+      },
+      "properties": {
+        "name": "IMG_20250517_171849.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.159289, -17.427406]
+      },
+      "properties": {
+        "name": "IMG_20250518_112245.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.159289, -17.427406]
+      },
+      "properties": {
+        "name": "IMG_20250518_112305.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.159258, -17.428153]
+      },
+      "properties": {
+        "name": "IMG_20250518_112353.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.159711, -17.429158]
+      },
+      "properties": {
+        "name": "IMG_20250518_112648.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.159711, -17.429158]
+      },
+      "properties": {
+        "name": "IMG_20250518_112653.jpg",
+        "description": "Punto GPS desde metadatos"
+      }
+    }
+  ]
+}
