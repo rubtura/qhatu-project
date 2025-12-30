@@ -1,116 +1,61 @@
 // src/components/MapComponent.jsx
 import { useEffect, useState } from "react";
-import { MapContainer, TileLayer, useMap } from "react-leaflet";
+import {
+  MapContainer,
+  TileLayer,
+  GeoJSON
+} from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
-// Componente que solo se ejecuta en el cliente
-function ClientMap() {
+export default function MapComponent() {
   const [geoData, setGeoData] = useState(null);
-  const [isClient, setIsClient] = useState(false);
   const COCHABAMBA_CENTER = [-17.3895, -66.1568];
 
   useEffect(() => {
-    setIsClient(true);
-
-    // ✅ Ruta compatible con LOCAL y con GitHub Pages (respeta BASE_URL)
     const url = `${import.meta.env.BASE_URL}data/fotos_gps.json`;
-    console.log("Cargando GeoJSON desde:", url);
+    console.log("Cargando GeoJSON:", url);
 
-    // Cargar datos solo en el cliente
     fetch(url)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`Network response was not ok (HTTP ${response.status})`);
-        }
-        return response.json();
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.json();
       })
       .then((data) => {
-        console.log("GeoJSON loaded:", data);
+        console.log("GeoJSON cargado:", data.features.length);
         setGeoData(data);
       })
-      .catch((error) => {
-        console.error("Error loading GeoJSON:", error);
-      });
+      .catch((err) => console.error("Error cargando JSON:", err));
   }, []);
 
-  // Fix para iconos de Leaflet (solo en cliente)
-  useEffect(() => {
-    if (isClient) {
-      import("leaflet").then((L) => {
-        delete L.Icon.Default.prototype._getIconUrl;
-        L.Icon.Default.mergeOptions({
-          iconRetinaUrl:
-            "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png",
-          iconUrl:
-            "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
-          shadowUrl:
-            "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
-        });
-      });
-    }
-  }, [isClient]);
+  // Estilo de los puntos
+  const pointStyle = {
+    radius: 8,
+    fillColor: "#f59e0b",
+    color: "#ea580c",
+    weight: 2,
+    opacity: 1,
+    fillOpacity: 0.85
+  };
 
-  function MapController({ geoData }) {
-    const map = useMap();
-
-    useEffect(() => {
-      if (geoData && geoData.features && geoData.features.length > 0) {
-        import("leaflet").then((L) => {
-          const group = new L.FeatureGroup();
-
-          geoData.features.forEach((feature) => {
-            if (feature.geometry && feature.geometry.coordinates) {
-              const marker = L.circleMarker(
-                [feature.geometry.coordinates[1], feature.geometry.coordinates[0]],
-                {
-                  radius: 8,
-                  fillColor: "#f59e0b",
-                  color: "#ea580c",
-                  weight: 2,
-                  opacity: 1,
-                  fillOpacity: 0.8,
-                }
-              );
-
-              if (feature.properties && feature.properties.name) {
-                marker.bindPopup(`
-                  <div style="padding: 8px;">
-                    <h3 style="font-weight: bold; color: #f59e0b; margin-bottom: 4px;">${feature.properties.name}</h3>
-                    <p style="font-size: 14px; margin-bottom: 4px;">${
-                      feature.properties.description || "Mercado informal"
-                    }</p>
-                    <p style="font-size: 12px; color: #666;">
-                      Coordenadas: ${feature.geometry.coordinates[1].toFixed(
-                        6
-                      )}, ${feature.geometry.coordinates[0].toFixed(6)}
-                    </p>
-                  </div>
-                `);
-              }
-
-              group.addLayer(marker);
-            }
-          });
-
-          map.addLayer(group);
-          map.fitBounds(group.getBounds(), { padding: [20, 20] });
-        });
-      }
-    }, [geoData, map]);
-
-    return null;
-  }
-
-  if (!isClient) {
-    return (
-      <div className="h-screen w-full pt-16 flex items-center justify-center bg-gray-100">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-500 mx-auto mb-4"></div>
-          <p className="text-gray-600">Cargando mapa...</p>
+  // Popup por feature
+  const onEachFeature = (feature, layer) => {
+    if (feature.properties) {
+      layer.bindPopup(`
+        <div style="padding:8px">
+          <strong style="color:#f59e0b">
+            ${feature.properties.name || "Punto GPS"}
+          </strong>
+          <p style="margin:4px 0">
+            ${feature.properties.description || "Mercado informal"}
+          </p>
+          <small>
+            ${feature.geometry.coordinates[1].toFixed(6)},
+            ${feature.geometry.coordinates[0].toFixed(6)}
+          </small>
         </div>
-      </div>
-    );
-  }
+      `);
+    }
+  };
 
   return (
     <div className="h-screen w-full pt-16">
@@ -118,19 +63,23 @@ function ClientMap() {
         center={COCHABAMBA_CENTER}
         zoom={13}
         style={{ height: "100%", width: "100%" }}
-        scrollWheelZoom={true}
+        scrollWheelZoom
       >
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          attribution="&copy; OpenStreetMap contributors"
         />
-        {geoData && <MapController geoData={geoData} />}
+
+        {geoData && (
+          <GeoJSON
+            data={geoData}
+            pointToLayer={(feature, latlng) =>
+              window.L.circleMarker(latlng, pointStyle)
+            }
+            onEachFeature={onEachFeature}
+          />
+        )}
       </MapContainer>
     </div>
   );
-}
-
-// Componente principal
-export default function MapComponent() {
-  return <ClientMap />;
 }
