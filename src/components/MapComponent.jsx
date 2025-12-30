@@ -1,7 +1,7 @@
 // src/components/MapComponent.jsx
-import { useEffect, useState } from 'react';
-import { MapContainer, TileLayer, useMap } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
+import { useEffect, useState } from "react";
+import { MapContainer, TileLayer, useMap } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
 
 // Componente que solo se ejecuta en el cliente
 function ClientMap() {
@@ -11,33 +11,40 @@ function ClientMap() {
 
   useEffect(() => {
     setIsClient(true);
-    
+
+    // ✅ Ruta compatible con LOCAL y con GitHub Pages (respeta BASE_URL)
+    const url = `${import.meta.env.BASE_URL}data/fotos_gps.json`;
+    console.log("Cargando GeoJSON desde:", url);
+
     // Cargar datos solo en el cliente
-    fetch('/data/fotos_gps.json')
-      .then(response => {
+    fetch(url)
+      .then((response) => {
         if (!response.ok) {
-          throw new Error('Network response was not ok');
+          throw new Error(`Network response was not ok (HTTP ${response.status})`);
         }
         return response.json();
       })
-      .then(data => {
-        console.log('GeoJSON loaded:', data);
+      .then((data) => {
+        console.log("GeoJSON loaded:", data);
         setGeoData(data);
       })
-      .catch(error => {
-        console.error('Error loading GeoJSON:', error);
+      .catch((error) => {
+        console.error("Error loading GeoJSON:", error);
       });
   }, []);
 
   // Fix para iconos de Leaflet (solo en cliente)
   useEffect(() => {
     if (isClient) {
-      import('leaflet').then(L => {
+      import("leaflet").then((L) => {
         delete L.Icon.Default.prototype._getIconUrl;
         L.Icon.Default.mergeOptions({
-          iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
-          iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
-          shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+          iconRetinaUrl:
+            "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png",
+          iconUrl:
+            "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
+          shadowUrl:
+            "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
         });
       });
     }
@@ -45,13 +52,13 @@ function ClientMap() {
 
   function MapController({ geoData }) {
     const map = useMap();
-    
+
     useEffect(() => {
       if (geoData && geoData.features && geoData.features.length > 0) {
-        import('leaflet').then(L => {
+        import("leaflet").then((L) => {
           const group = new L.FeatureGroup();
-          
-          geoData.features.forEach(feature => {
+
+          geoData.features.forEach((feature) => {
             if (feature.geometry && feature.geometry.coordinates) {
               const marker = L.circleMarker(
                 [feature.geometry.coordinates[1], feature.geometry.coordinates[0]],
@@ -61,25 +68,30 @@ function ClientMap() {
                   color: "#ea580c",
                   weight: 2,
                   opacity: 1,
-                  fillOpacity: 0.8
+                  fillOpacity: 0.8,
                 }
               );
-              
+
               if (feature.properties && feature.properties.name) {
                 marker.bindPopup(`
                   <div style="padding: 8px;">
                     <h3 style="font-weight: bold; color: #f59e0b; margin-bottom: 4px;">${feature.properties.name}</h3>
-                    <p style="font-size: 14px; margin-bottom: 4px;">${feature.properties.description || 'Mercado informal'}</p>
+                    <p style="font-size: 14px; margin-bottom: 4px;">${
+                      feature.properties.description || "Mercado informal"
+                    }</p>
                     <p style="font-size: 12px; color: #666;">
-                      Coordenadas: ${feature.geometry.coordinates[1].toFixed(6)}, ${feature.geometry.coordinates[0].toFixed(6)}
+                      Coordenadas: ${feature.geometry.coordinates[1].toFixed(
+                        6
+                      )}, ${feature.geometry.coordinates[0].toFixed(6)}
                     </p>
                   </div>
                 `);
               }
+
               group.addLayer(marker);
             }
           });
-          
+
           map.addLayer(group);
           map.fitBounds(group.getBounds(), { padding: [20, 20] });
         });
@@ -105,7 +117,7 @@ function ClientMap() {
       <MapContainer
         center={COCHABAMBA_CENTER}
         zoom={13}
-        style={{ height: '100%', width: '100%' }}
+        style={{ height: "100%", width: "100%" }}
         scrollWheelZoom={true}
       >
         <TileLayer
@@ -118,7 +130,7 @@ function ClientMap() {
   );
 }
 
-// Componente principal que usa client:only
+// Componente principal
 export default function MapComponent() {
   return <ClientMap />;
 }
