@@ -12,37 +12,21 @@ function ClientMap() {
   useEffect(() => {
     setIsClient(true);
     
-    // Cargar datos solo en el cliente - Ruta correcta para Astro
+    // Cargar datos solo en el cliente - Ruta correcta para GitHub Pages
     const loadData = async () => {
       try {
-        // Ruta correcta para archivos en la carpeta public/
-        const response = await fetch('/data/fotos_gps.json');
+        // Ruta absoluta para GitHub Pages con base "/qhatu-project"
+        const response = await fetch('/qhatu-project/data/fotos_gps.json');
         
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        console.log('GeoJSON loaded:', data);
+        console.log('JSON data loaded:', data);
         setGeoData(data);
       } catch (error) {
-        console.error('Error loading GeoJSON:', error);
-        // Cargar datos de ejemplo si falla
-        setGeoData({
-          type: "FeatureCollection",
-          features: [
-            {
-              type: "Feature",
-              properties: {
-                name: "Mercado Central",
-                description: "Mercado informal principal"
-              },
-              geometry: {
-                type: "Point",
-                coordinates: [-66.1568, -17.3895]
-              }
-            }
-          ]
-        });
+        console.error('Error loading JSON:', error);
+        // No mostramos datos de ejemplo, solo el error
       }
     };
 
@@ -67,14 +51,14 @@ function ClientMap() {
     const map = useMap();
     
     useEffect(() => {
-      if (geoData && geoData.features && geoData.features.length > 0) {
+      if (geoData && geoData.length > 0) {
         import('leaflet').then(L => {
           const group = new L.FeatureGroup();
           
-          geoData.features.forEach(feature => {
-            if (feature.geometry && feature.geometry.coordinates) {
+          geoData.forEach(item => {
+            if (item.latitude && item.longitude) {
               const marker = L.circleMarker(
-                [feature.geometry.coordinates[1], feature.geometry.coordinates[0]],
+                [item.latitude, item.longitude],
                 {
                   radius: 8,
                   fillColor: "#f59e0b",
@@ -85,13 +69,13 @@ function ClientMap() {
                 }
               );
               
-              if (feature.properties && feature.properties.name) {
+              if (item.name) {
                 marker.bindPopup(`
                   <div style="padding: 8px;">
-                    <h3 style="font-weight: bold; color: #f59e0b; margin-bottom: 4px;">${feature.properties.name}</h3>
-                    <p style="font-size: 14px; margin-bottom: 4px;">${feature.properties.description || 'Mercado informal'}</p>
+                    <h3 style="font-weight: bold; color: #f59e0b; margin-bottom: 4px;">${item.name}</h3>
+                    <p style="font-size: 14px; margin-bottom: 4px;">${item.description || 'Sin descripción'}</p>
                     <p style="font-size: 12px; color: #666;">
-                      Coordenadas: ${feature.geometry.coordinates[1].toFixed(6)}, ${feature.geometry.coordinates[0].toFixed(6)}
+                      Coordenadas: ${item.latitude.toFixed(6)}, ${item.longitude.toFixed(6)}
                     </p>
                   </div>
                 `);
