@@ -12,7 +12,7 @@ function FitBounds({ geoData }) {
     const coords = geoData.features
       .map((f) => f?.geometry?.coordinates)
       .filter((c) => Array.isArray(c) && c.length >= 2)
-      .map(([lng, lat]) => [lat, lng]); // Leaflet usa [lat, lng]
+      .map(([lng, lat]) => [lat, lng]); // Leaflet: [lat,lng]
 
     if (coords.length === 0) return;
 
@@ -45,9 +45,11 @@ export default function MapComponent() {
   const COCHABAMBA_CENTER = [-17.3895, -66.1568];
 
   useEffect(() => {
-    // ✅ Forma robusta (NO falla por slash) para Astro/Vite + GitHub Pages
-    const url = new URL("data/fotos_gps.json", import.meta.env.BASE_URL).toString();
+    // ✅ base ABSOLUTA (evita "Invalid base URL")
+    const base = `${window.location.origin}${import.meta.env.BASE_URL}`;
+    const url = new URL("data/fotos_gps.json", base).toString();
 
+    console.log("BASE_URL:", import.meta.env.BASE_URL);
     console.log("Cargando GeoJSON desde:", url);
 
     fetch(url)
@@ -62,11 +64,20 @@ export default function MapComponent() {
       .catch((err) => console.error("Error cargando GeoJSON:", err));
   }, []);
 
+  // ✅ Creamos opciones que usan Leaflet importado (no window.L)
+  const [leaflet, setLeaflet] = useState(null);
+
+  useEffect(() => {
+    // Leaflet solo en cliente
+    import("leaflet").then((L) => setLeaflet(L));
+  }, []);
+
   const geoJsonOptions = useMemo(() => {
+    if (!leaflet) return null;
+
     return {
       pointToLayer: (feature, latlng) => {
-        // ✅ CircleMarker usando Leaflet del navegador (ya está cargado por react-leaflet)
-        return window.L.circleMarker(latlng, {
+        return leaflet.circleMarker(latlng, {
           radius: 8,
           fillColor: "#f59e0b",
           color: "#ea580c",
@@ -94,7 +105,7 @@ export default function MapComponent() {
         }
       },
     };
-  }, []);
+  }, [leaflet]);
 
   return (
     <div className="h-screen w-full pt-16">
@@ -109,12 +120,9 @@ export default function MapComponent() {
           attribution="&copy; OpenStreetMap contributors"
         />
 
-        {geoData && (
+        {geoData && geoJsonOptions && (
           <>
-            {/* ✅ Enfoca donde están tus puntos */}
             <FitBounds geoData={geoData} />
-
-            {/* ✅ Dibuja los puntos */}
             <GeoJSON data={geoData} {...geoJsonOptions} />
           </>
         )}
